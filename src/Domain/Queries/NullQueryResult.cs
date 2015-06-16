@@ -9,5 +9,6 @@ namespace Domain.Queries
     [Serializable]
     public class NullQueryResult
     {
+
     }
 }
