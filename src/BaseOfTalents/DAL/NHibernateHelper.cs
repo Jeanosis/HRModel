@@ -54,7 +54,7 @@ namespace BaseOfTalents.DAL
                 db.Driver<SqlClientDriver>();
                 db.KeywordsAutoImport = Hbm2DDLKeyWords.AutoQuote;
                 db.IsolationLevel = IsolationLevel.ReadCommitted;
-                db.ConnectionString = "Data Source=(LocalDB)\\v11.0;AttachDbFilename=|DataDirectory|\\App_Data\\HRDatabase.mdf;Integrated Security=True";
+                db.ConnectionString = "Data Source=(LocalDB)\\v11.0;AttachDbFilename=|DataDirectory|\\HRDatabase.mdf;Integrated Security=True";//\\App_Data
 
                 db.LogFormattedSql = true;
                 db.LogSqlInConsole = true;

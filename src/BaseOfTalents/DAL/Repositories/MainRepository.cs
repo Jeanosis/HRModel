@@ -8,6 +8,18 @@ namespace BaseOfTalents.DAL.Repositories
 {
     public class MainRepository : IMainRepository
     {
+        public MainRepository()
+        {
+            Candidate fCandidate = new Candidate(), sCandidate = new Candidate(), tCandidate = new Candidate();
+            fCandidate.FirstName = "PUPS";
+            sCandidate.FirstName = "PEPS";
+            tCandidate.FirstName = "Pikachu";
+
+            SaveCandidate(fCandidate);
+            SaveCandidate(sCandidate);
+            SaveCandidate(tCandidate);
+        }
+
         public void SaveCandidate(Candidate candidate)
         {
             using (var session = NHibernateHelper.OpenSession())
