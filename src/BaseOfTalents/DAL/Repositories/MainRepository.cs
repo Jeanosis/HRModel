@@ -6,7 +6,7 @@ using BaseOfTalents.Models;
 
 namespace BaseOfTalents.DAL.Repositories
 {
-    public class MainRepository
+    public class MainRepository : IMainRepository
     {
         public void SaveCandidate(Candidate candidate)
         {
@@ -21,11 +21,11 @@ namespace BaseOfTalents.DAL.Repositories
         }
 
 
-        public Candidate GetCandidateById(Guid id)
+        public Candidate GetCandidateByName(String name)
         {
             using (var session = NHibernateHelper.OpenSession())
             {
-                var list = session.QueryOver<Candidate>().Where(x => x.Id == id).List();
+                var list = session.QueryOver<Candidate>().Where(x => x.FirstName == name).List();
                 return list.Count != 0 ? list[0] : null;
             }
         }
