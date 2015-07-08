@@ -110,6 +110,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\Mappings\CandidateMap.cs" />
+    <Compile Include="DAL\NHibernateHelper.cs" />
+    <Compile Include="DAL\Repositories\IMainRepository.cs" />
+    <Compile Include="DAL\Repositories\MainRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -134,8 +138,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
-    <Folder Include="DAL\Mappings\" />
-    <Folder Include="DAL\NHibernate\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
