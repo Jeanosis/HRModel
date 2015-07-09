@@ -75,7 +75,7 @@ namespace BaseOfTalents.Models
             }
         }
         
-        public Dictionary<Candidate, List<StageInfo>> CandidatesProgress
+        public virtual Dictionary<Candidate, List<StageInfo>> CandidatesProgress
         {
             get { return candidatesProgress; }
             set 

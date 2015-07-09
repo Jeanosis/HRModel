@@ -83,6 +83,16 @@ namespace BaseOfTalents.Models
             }
         }
 
+        public virtual Dictionary<Vacancy, List<StageInfo>> VacanciesProgress
+        {
+            get { return vacanciesProgress; }
+            set
+            {
+                vacanciesProgress = value;
+                LastEditTime = DateTime.Now;
+            }
+        }
+
         #endregion
         #region Variables
 
@@ -93,6 +103,7 @@ namespace BaseOfTalents.Models
         private Byte[] photo;
         private bool relocationAgreement;
         private String about;
+        private Dictionary<Vacancy, List<StageInfo>> vacanciesProgress;
 
         #endregion
     }
