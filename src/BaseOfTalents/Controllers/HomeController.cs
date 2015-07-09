@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using BaseOfTalents.DAL.Repositories;
+using BaseOfTalents.DAL;
 
 namespace BaseOfTalents.Controllers
 {
@@ -18,7 +18,7 @@ namespace BaseOfTalents.Controllers
         [HttpPost]
         public ActionResult Index(string Name)
         {
-            ViewBag.Candidate = new MainRepository().GetCandidateByName(Name);
+            ViewBag.Candidate = RepositoryService.Repository.GetCandidateByName(Name);
             return View();
         }
     }
