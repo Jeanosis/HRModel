@@ -32,6 +32,14 @@ namespace BaseOfTalents.DAL.Repositories
             }
         }
 
+        public Candidate GetCandidateById(Guid id)
+        {
+            using (var session = NHibernateHelper.OpenSession())
+            {
+                var list = session.QueryOver<Candidate>().Where(x => x.Id == id).List();
+                return list.Count != 0 ? list[0] : null;
+            }
+        }
 
         public Candidate GetCandidateByName(String name)
         {
