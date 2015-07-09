@@ -13,6 +13,7 @@ using NHibernate.Driver;
 using NHibernate.Mapping.ByCode;
 using BaseOfTalents.Models;
 using BaseOfTalents.DAL.Mappings;
+using System.Diagnostics;
 
 namespace BaseOfTalents.DAL
 {
@@ -59,6 +60,8 @@ namespace BaseOfTalents.DAL
                 db.LogFormattedSql = true;
                 db.LogSqlInConsole = true;
                 db.AutoCommentSql = true;
+
+                Debug.WriteLine(new Candidate().DoB);
             });
 
             return config;
