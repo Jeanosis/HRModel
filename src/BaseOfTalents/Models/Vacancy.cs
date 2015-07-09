@@ -7,6 +7,12 @@ namespace BaseOfTalents.Models
 {
     public class Vacancy : BaseEntity
     {
+        public Vacancy()
+        { 
+            StartDate = DateTime.Today;
+            EndDate = DateTime.Today.AddDays(7);
+        }
+
         #region Properties
 
         public virtual string Name
