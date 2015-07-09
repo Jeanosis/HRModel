@@ -74,6 +74,17 @@ namespace BaseOfTalents.Models
                 LastEditTime = DateTime.Now;
             }
         }
+        
+        public Dictionary<Candidate, List<StageInfo>> CandidatesProgress
+        {
+            get { return candidatesProgress; }
+            set 
+            {
+                candidatesProgress = value;
+                LastEditTime = DateTime.Now;    // TODO: not good. if dictionary changed using get method,
+                                                //  LastEditTime is not being updated
+            }
+        }
 
         #endregion
         #region Variables
@@ -84,6 +95,7 @@ namespace BaseOfTalents.Models
         private string requiredSkills;
         private string description;
         private string comment;
+        private Dictionary<Candidate, List<StageInfo>> candidatesProgress;
 
         #endregion
     }
