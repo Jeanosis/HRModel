@@ -68,8 +68,9 @@ namespace BaseOfTalents.DAL
         {
             ModelMapper mapper = new ModelMapper();
             mapper.AddMapping<CandidateMap>();
+            mapper.AddMapping<VacancyMap>();
 
-            HbmMapping mapping = mapper.CompileMappingFor(new[] { typeof(Candidate) });
+            HbmMapping mapping = mapper.CompileMappingFor(new[] { typeof(Candidate), typeof(Vacancy) });
 
             return mapping;
         }
