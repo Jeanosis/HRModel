@@ -81,7 +81,7 @@ namespace BaseOfTalents.Models
             set 
             {
                 candidatesProgress = value;
-                LastEditTime = DateTime.Now;    // TODO: not good. if dictionary changed using get method,
+                LastEditTime = DateTime.Now;    // TODO: not good. if dictionary is changed using get method,
                                                 //  LastEditTime is not being updated
             }
         }

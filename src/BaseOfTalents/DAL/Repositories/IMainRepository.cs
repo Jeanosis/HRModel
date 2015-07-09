@@ -12,5 +12,6 @@ namespace BaseOfTalents.DAL.Repositories
         void SaveCandidate(Candidate candidate);
         Candidate GetCandidateByName(String name);
         List<Candidate> GetAllCandidates();
+        List<Vacancy> GetAllVacancies();
     }
 }

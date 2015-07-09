@@ -111,6 +111,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\VacanciesListController.cs" />
     <Compile Include="DAL\Mappings\CandidateMap.cs" />
     <Compile Include="DAL\Mappings\VacancyMap.cs" />
     <Compile Include="DAL\NHibernateHelper.cs" />
@@ -124,6 +125,7 @@
     <Compile Include="Models\Candidate.cs" />
     <Compile Include="Models\Vacancy.cs" />
     <Compile Include="Models\StageInfo.cs" />
+    <Compile Include="Models\VacancySearchArguments.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
