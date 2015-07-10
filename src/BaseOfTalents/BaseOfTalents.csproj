@@ -125,6 +125,7 @@
     <Compile Include="Models\Candidate.cs" />
     <Compile Include="Models\Vacancy.cs" />
     <Compile Include="Models\StageInfo.cs" />
+    <Compile Include="Models\VacancyListEntry.cs" />
     <Compile Include="Models\VacancySearchArguments.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -146,7 +147,9 @@
     </Content>
     <Content Include="Views\Web.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Views\VacanciesList\Search.cshtml" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>

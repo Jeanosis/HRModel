@@ -16,10 +16,5 @@ namespace BaseOfTalents.Models
         public DateTime? MinEndDate { get; set; }
 
         public string Name { get; set; }
-
-        public static VacancySearchArguments Empty()
-        {
-            return new VacancySearchArguments();
-        }
     }
 }

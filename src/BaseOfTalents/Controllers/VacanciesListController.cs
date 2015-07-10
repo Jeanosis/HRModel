@@ -18,20 +18,39 @@ namespace BaseOfTalents.Controllers
         [HttpGet]
         public ActionResult Search(VacancySearchArguments args)
         {
-            var vacancies = RepositoryService.Repository.GetAllVacancies();
+            return View(SearchImpl(args));
+        }
+
+        private IEnumerable<VacancyListEntry> SearchImpl(VacancySearchArguments args)
+        {
+            var vacancies = (IEnumerable<Vacancy>)RepositoryService.Repository.GetAllVacancies();
+            
+            if (args.MinEndDate != null)
+            {
+                vacancies = vacancies.Where(vacancy => vacancy.EndDate >= args.MinEndDate);
+            }
 
             if (args.MaxEndDate != null)
             {
-                
+                vacancies = vacancies.Where(vacancy => vacancy.EndDate <= args.MaxEndDate);
             }
 
             if (args.MinStartDate != null)
-            {
-            
+            { 
+                vacancies = vacancies.Where(vacancy => vacancy.StartDate >= args.MinStartDate);
             }
 
+            if (args.MaxStartDate != null)
+            {
+                vacancies = vacancies.Where(vacancy => vacancy.StartDate <= args.MaxStartDate);
+            }
 
-            return new EmptyResult();
+            if (args.Name != null)
+            {
+                vacancies = vacancies.Where(vacancy => vacancy.Name.ToLower().Contains(args.Name.ToLower()));
+            }
+
+            return vacancies.ToList().ConvertAll(vacancy => new VacancyListEntry(vacancy));
         }
     }
 }
