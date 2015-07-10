@@ -12,24 +12,26 @@ namespace BaseOfTalents.Controllers
     {
         //
         // GET: /CandidateEdit/
-
+        
         public ActionResult Index()
         {
             return View("CandidateEdit");
         }
 
-        /*[HttpGet]
-        public ActionResult Index(Guid candidateId)
+        [HttpGet]
+        public ActionResult Index(Guid candidateId)//Guid candidateId)
         {
-            ViewBag.Candidate = RepositoryService.Repository.GetCandidateById(candidateId);
-            return View();
-        }*/
+            return View("CandidateEdit", RepositoryService.Repository.GetCandidateById(candidateId));
+        }
 
         [HttpPost]
-        public ActionResult Index(Candidate candidate)
+        public ActionResult Index(Candidate candidate, Guid Id)
         {
-            //RepositoryService.Repository.SaveCandidate(candidate);
-            return RedirectToAction("Index", "Home", candidate.Id);//View();
+            System.Diagnostics.Debug.WriteLine("RedactId: {0}", candidate.Id);
+            System.Diagnostics.Debug.WriteLine("Id: {0}", Id);
+            RepositoryService.Repository.SaveCandidate(candidate);
+            System.Diagnostics.Debug.WriteLine("RedactId: {0}", candidate.Id);
+            return RedirectToAction("Index", "Home");//, candidate.Id);//View();
         }
     }
 }

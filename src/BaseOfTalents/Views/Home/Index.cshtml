@@ -16,7 +16,8 @@
         {
             <p> Имя кандидата: </p>
             @Html.TextBox("Name")
-            <input type="submit" value="Поиск"/>            
+            @Html.CheckBox("Check", false);
+            <input type="submit" value="Ок"/>           
         }
 
         <p> Результаты поиска </p>

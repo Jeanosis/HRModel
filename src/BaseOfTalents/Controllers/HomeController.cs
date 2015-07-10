@@ -16,10 +16,10 @@ namespace BaseOfTalents.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(string Name)
+        public ActionResult Index(string Name, bool Check)
         {
             ViewBag.Candidate = RepositoryService.Repository.GetCandidateByName(Name);
-            return View();
+            return Check ? (ActionResult)RedirectToAction("Index", "CandidateEdit", new { candidateId = ViewBag.Candidate.Id }) : View();
         }
     }
 }

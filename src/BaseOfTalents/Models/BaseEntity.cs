@@ -13,7 +13,7 @@ namespace BaseOfTalents.Models
         }
         #region Properties
 
-        public virtual Guid Id { get; protected set; }
+        public virtual Guid Id { get; /*protected*/ set; }
         public virtual DateTime LastEditTime { get; protected set; }
 
         #endregion
