@@ -9,6 +9,7 @@ namespace BaseOfTalents.Controllers
 {
     public class HomeController : Controller
     {
+        [HttpGet]
         public ActionResult Index()
         {
             ViewBag.Candidate = null;
